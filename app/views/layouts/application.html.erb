@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RankingEnade</title>
+  <title>Ranking Enade</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Ranking Enade</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a  href="#"> <%= link_to "Universities", universities_path, :class => 'navbar-link' %></a>
+        </li>
+        <li class="nav-item">
+          <a href="#"> <%= link_to "Courses", courses_path, :class => 'navbar-link' %></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main role="main" class="container" style="margin-top:90px">
+  <%= yield %>
+</main>
+
+<footer class="footer">
+  <div class="navbar fixed-bottom">
+    <span class="text-muted">Ranking Enade was build on Rails 4.</span>
+  </div>
+</footer>
 
 </body>
 </html>
