@@ -3,7 +3,7 @@ class CreateUniversities < ActiveRecord::Migration
     create_table :universities do |t|
       t.text :name
       t.text :uf
-      t.decimal :grade
+      t.float :grade
 
       t.timestamps
     end
