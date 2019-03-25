@@ -1,12 +1,14 @@
+<%= render 'search' %>
+
 <h1>Listing courses</h1>
 
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">>Name</th>
-      <th scope="col">>Grade</th>
-      <th scope="col">>Avg</th>
-      <th scope="col">>University</th>
+      <th scope="col">Name</th>
+      <th scope="col">Grade</th>
+      <th scope="col">Average</th>
+      <th scope="col">University</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +19,7 @@
         <td><%= course.name %></td>
         <td><%= course.grade %></td>
         <td><%= course.avg %></td>
-        <td><%= course.university %></td>
+        <td><%= course.university.name %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>

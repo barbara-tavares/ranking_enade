@@ -45,3 +45,4 @@ gem 'spring',        group: :development
 
 gem 'simple_form'
 
+gem 'ransack'

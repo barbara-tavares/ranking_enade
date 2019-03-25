@@ -4,7 +4,8 @@ class UniversitiesController < ApplicationController
   # GET /universities
   # GET /universities.json
   def index
-    @universities = University.all
+    @q = University.ransack(params[:q])
+    @universities = @q.result
   end
 
   # GET /universities/1
@@ -69,6 +70,6 @@ class UniversitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def university_params
-      params.require(:university).permit(:name, :uf, :grade)
+      params.require(:university).permit(:name, :uf_id, :grade)
     end
 end

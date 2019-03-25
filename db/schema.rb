@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190323035625) do
+ActiveRecord::Schema.define(version: 20190324152833) do
 
   create_table "courses", force: true do |t|
     t.text     "name"
@@ -24,12 +24,20 @@ ActiveRecord::Schema.define(version: 20190323035625) do
 
   add_index "courses", ["university_id"], name: "index_courses_on_university_id"
 
-  create_table "universities", force: true do |t|
+  create_table "ufs", force: true do |t|
     t.text     "name"
-    t.text     "uf"
-    t.decimal  "grade"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "universities", force: true do |t|
+    t.text     "name"
+    t.decimal  "grade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "uf_id"
+  end
+
+  add_index "universities", ["uf_id"], name: "index_universities_on_uf_id"
 
 end
