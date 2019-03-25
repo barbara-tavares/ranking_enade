@@ -8,7 +8,7 @@ gem 'rails', '4.2.8'
 #        gem 'sqlite3', '~> 1.3.13'
 #end
 #group :production do
-        gem 'pg'
+        gem 'pg', '~> 0.21'
 #end
 
 
